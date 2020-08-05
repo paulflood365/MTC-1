@@ -2,7 +2,7 @@ Before do
   page.current_window.resize_to(1270, 768)
   Capybara.visit Capybara.app_host
   p Time.now
-  sign_in_page.cookies_banner.accept_all.click
+  sign_in_page.cookies_banner.accept_all.click if sign_in_page.cookies_banner.accept_all.visible?
 end
 
 Before('@service_manager_message') do
