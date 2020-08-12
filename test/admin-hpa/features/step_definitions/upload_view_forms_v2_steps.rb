@@ -45,7 +45,7 @@ When(/^I have uploaded a valid (.*) form$/) do |type|
   @file_name = "test-check-form-#{rand(234243234234234)}.csv"
   @file_path = "data/fixtures/#{@file_name}"
   upload_new_forms_page.create_unique_check_csv(@file_path, File.read(File.expand_path('data/fixtures/check-form-1.csv')))
-  page.attach_file('csvFiles', File.expand_path("#{@file_path}"))
+  driver.find_element(:id, 'csvFiles').send_keys(File.expand_path("#{@file_path}"))
   upload_new_forms_page.send("#{type}_check_form").click
   upload_new_forms_page.submit_upload
   upload_new_forms_page.delete_csv_file(@file_path)

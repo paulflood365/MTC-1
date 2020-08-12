@@ -28,3 +28,5 @@ browser_caps:
     "browser_version": "11"
     "browserstack.selenium_version": "3.141.59"
     "browserstack.ie.driver": "3.141.59"
+    "browserstack.ie.arch": "x32"
+    "browserstack.sendKeys": "true"
